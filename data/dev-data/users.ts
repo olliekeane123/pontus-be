@@ -1,7 +1,7 @@
-import { User } from "../../types/User"
+import { BaseUser } from "../../types/api/users"
 
-export const users: User[] = [
-    {username: 'alice', password: 'pass123'},
-    {username: 'bob', password: 'pass456'},
-    {username: 'mikela', password: 'pass789'}
+export const users: BaseUser[] = [
+    { username: "alice", password: "pass123" },
+    { username: "bob", password: "pass456" },
+    { username: "mikela", password: "pass789" },
 ]

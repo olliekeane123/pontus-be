@@ -6,7 +6,7 @@
     "setup-db": "psql -f ./db/setup.sql",
     "seed": "tsx ./seeds/run-seed.ts",
     "test": "jest",
-    "dev": "tsx src/server.ts"
+    "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",

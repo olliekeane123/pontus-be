@@ -1,0 +1,16 @@
+{
+    "GET /api": {
+        "description": "serves a json representation of all the available endpoints of the api"
+    },
+    "GET /api/users": {
+        "description": "serves an array of all users",
+        "queries": [],
+        "exampleResponse": {
+            "users": [
+                { "username": "alice", "password": "pass123" },
+                { "username": "bob", "password": "pass456" },
+                { "username": "mikela", "password": "pass789" }
+            ]
+        }
+    }
+}

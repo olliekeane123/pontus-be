@@ -1,7 +1,7 @@
-import { User } from "./User"
+import { BaseUser } from "./api/users"
 
 type SeedData = {
-    users: User[]
+    users: BaseUser[]
 }
 
 export default SeedData

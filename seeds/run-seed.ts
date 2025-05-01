@@ -1,6 +1,6 @@
 import * as devData from '../data/dev-data/index'
 import seed from "./seed";
-import { db } from "../db/connection";
+import db from "../db/connection";
 
 const runSeed = async () => {
     try {

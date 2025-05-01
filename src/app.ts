@@ -1,11 +1,14 @@
-import express from 'express'
+import express, { type Express} from "express"
+import apiRouter from "./routes/api-router"
 
-const app = express()
+const createApp = (): Express => {
+    const app = express()
 
-app.use(express.json())
+    app.use(express.json())
 
-app.get('/api/health', (req, res) => {
-    res.send({status: 'OK'})
-})
+    app.use("/api", apiRouter)
 
-export default app
+    return app
+}
+
+export default createApp

@@ -18,5 +18,6 @@ if (env === 'production') {
 if (!process.env.PGDATABASE && !process.env.DATABASE_URL) {
     throw new Error("PGDATABASE or DATABASE_URL not set");
 }
+const db = new Pool(poolConfig)
 
-export const db = new Pool(poolConfig)
+export default db
