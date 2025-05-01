@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup-db": "psql -f ./db/setup.sql",
+    "seed": "tsx ./seeds/run-seed.ts",
+    "test": "jest",
+    "dev": "tsx src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.15.6",
+    "pg-format": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.3",
+    "@types/pg": "^8.11.14",
+    "@types/pg-format": "^1.0.5",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.3.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
