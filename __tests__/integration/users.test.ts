@@ -1,6 +1,6 @@
 import request from "supertest"
 import { type Express } from "express"
-import createApp from "../../src/app"
+import createApp from "../../app/app"
 import seed from "../../seeds/seed"
 import * as testData from "../../data/test-data/index"
 import db from "../../db/connection"

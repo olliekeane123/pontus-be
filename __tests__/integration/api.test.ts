@@ -1,6 +1,6 @@
 import request from "supertest"
 import { type Express } from "express"
-import createApp from "../../src/app"
+import createApp from "../../app/app"
 import seed from "../../seeds/seed"
 import * as testData from "../../data/test-data/index"
 import db from "../../db/connection"
@@ -19,16 +19,16 @@ afterAll(async () => {
 
 describe("GET /api", () => {
     test("200: Responds with an object detailing the documentation for each endpoint", async () => {
-        const res = await request(app).get('/api')
+        const res = await request(app).get("/api")
         expect(res.status).toBe(200)
-        expect(res.body).toEqual({endpoints})
+        expect(res.body).toEqual({ endpoints })
     })
 })
 
-describe('GET /api/health', () => {
-    test('200: Responds with status OK', async () => {
-        const res = await request(app).get('/api/health')
+describe("GET /api/health", () => {
+    test("200: Responds with status OK", async () => {
+        const res = await request(app).get("/api/health")
         expect(res.status).toBe(200)
-        expect(res.body.status).toBe('OK')
+        expect(res.body.status).toBe("OK")
     })
 })

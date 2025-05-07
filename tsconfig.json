@@ -111,13 +111,14 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/**/*",
+    "app/**/*",
     "__tests__/**/*",
     "db/**/*",
     "types/**/*",
     "data/**/*",
-    "seeds/**/*"
-  ],
+    "seeds/**/*",
+    "etl/**/*",
+    ],
   "exclude": ["node_modules", "dist"]
 
 }
