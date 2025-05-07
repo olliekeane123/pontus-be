@@ -1,7 +1,9 @@
 import {
     fetchArtworkById,
     fetchArtworkIds,
+    fetchAllMetArtworks,
 } from "../../etl/extract/extract-met-api"
+import * as extractFns from "../../etl/extract/extract-met-api"
 import apiClient from "../../etl/lib/apiClient"
 
 jest.mock("../../etl/lib/apiClient")
@@ -36,8 +38,8 @@ describe("fetchArtworkIds", () => {
 describe("fetchArtworkById", () => {
     test("returns artwork data", async () => {
         // Arrange: Set up the mock
-        const mockData = { objectID: 1, title: "Test Artwork" }
-        ;(apiClient.get as jest.Mock).mockResolvedValue({ data: mockData })
+        const mockArtwork = { objectID: 1, title: "Test Artwork" }
+        ;(apiClient.get as jest.Mock).mockResolvedValue({ data: mockArtwork })
 
         // Act: Call the function
         const result = await fetchArtworkById(1)
@@ -49,6 +51,33 @@ describe("fetchArtworkById", () => {
         )
 
         // 2. Did it return the expected data?
-        expect(result).toEqual(mockData)
+        expect(result).toEqual(mockArtwork)
+    })
+})
+
+describe("fetchAllMetArtworks", () => {
+    test("fetches artworks using ids from fetchArtworkIds", async () => {
+        const mockIds = [1, 2]
+        const mockArtworks = [
+            { objectID: 1, title: "Art 1" },
+            { objectID: 2, title: "Art 2" },
+        ]
+
+        jest.spyOn(extractFns, "fetchArtworkIds").mockResolvedValue(mockIds)
+        jest.spyOn(extractFns, "fetchArtworkById").mockImplementation(
+            (id: number) => {
+                return Promise.resolve(
+                    mockArtworks.find((a) => a.objectID === id) || null
+                )
+            }
+        )
+
+        const result = await fetchAllMetArtworks()
+
+        expect(result).toEqual(mockArtworks)
+        expect(extractFns.fetchArtworkIds).toHaveBeenCalledTimes(1)
+        expect(extractFns.fetchArtworkById).toHaveBeenCalledTimes(2)
+        expect(extractFns.fetchArtworkById).toHaveBeenCalledWith(1)
+        expect(extractFns.fetchArtworkById).toHaveBeenCalledWith(2)
     })
 })
