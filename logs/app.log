@@ -1,0 +1,12 @@
+[2025-05-11T17:15:58.227Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-11T17:26:16.304Z] warn: [ETL] NODE_ENV not recognised: sausages
+[2025-05-11T17:26:16.307Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true}
+[2025-05-11T17:26:52.206Z] warn: [ETL] NODE_ENV not recognised: sausages
+[2025-05-11T17:26:52.208Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true}
+[2025-05-11T17:32:30.084Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-11T17:36:17.287Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-11T17:36:25.628Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T09:38:02.929Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T09:39:30.500Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T09:42:02.969Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T09:45:31.688Z] warn: [ETL] Failed to load progress for MET: ReferenceError: Cannot access 'getProgressFilePath' before initialization

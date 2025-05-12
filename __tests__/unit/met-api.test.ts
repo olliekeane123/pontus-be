@@ -53,6 +53,10 @@ describe("fetchArtworkById", () => {
         // 2. Did it return the expected data?
         expect(result).toEqual(mockArtwork)
     })
+
+    // test("if error ")
+
+    
 })
 
 describe("fetchAllMetArtworks", () => {

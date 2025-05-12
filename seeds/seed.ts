@@ -1,6 +1,6 @@
 import db from '../db/connection'
 import format from 'pg-format'
-import SeedData from '../types/SeedData'
+import SeedData from '../types/seed/SeedData'
 
 const seed = async ({users}: SeedData) => {
     await db.query('DROP TABLE IF EXISTS users CASCADE')
