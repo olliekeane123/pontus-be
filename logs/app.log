@@ -10,3 +10,296 @@
 [2025-05-12T09:39:30.500Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
 [2025-05-12T09:42:02.969Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
 [2025-05-12T09:45:31.688Z] warn: [ETL] Failed to load progress for MET: ReferenceError: Cannot access 'getProgressFilePath' before initialization
+[2025-05-12T10:51:54.644Z] info: [ETL] Starting ETL process with options: {"sources":["AIC","MET"],"resume":false,"batchSize":0,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T10:51:54.646Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T10:51:54.647Z] info: [ETL] Starting extraction for MET
+[2025-05-12T12:17:11.366Z] info: [ETL] Starting ETL process with options: {"sources":["AIC","MET"],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:17:11.368Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T12:17:11.368Z] info: [ETL] Starting extraction for MET
+[2025-05-12T12:17:31.365Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:25:27.243Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:27:10.974Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:27:49.268Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:28:18.787Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:52:54.616Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:54:18.235Z] info: [ETL] Starting ETL process with options: {"sources":[],"resume":false,"batchSize":-1000,"concurrency":2,"delayBetweenBatches":0}
+[2025-05-12T12:54:37.093Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T12:54:37.102Z] info: [ETL] Loaded progress for MET. Total IDs: 1000, Processed: 2, Failed: 15
+[2025-05-12T12:54:37.102Z] info: [ETL] Starting extraction for MET
+[2025-05-12T12:54:37.104Z] info: [ETL] No progress file found for AIC
+[2025-05-12T12:54:37.105Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T14:28:30.486Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T14:28:30.495Z] info: [ETL] Loaded progress for MET. Total IDs: 1000, Processed: 2, Failed: 15
+[2025-05-12T14:28:30.495Z] info: [ETL] Starting extraction for MET
+[2025-05-12T14:28:30.496Z] info: [MET] Resuming extraction. Total IDs: 1000, Already processed: 2, Failed: 15
+[2025-05-12T14:28:30.497Z] info: [ETL] No progress file found for AIC
+[2025-05-12T14:28:30.497Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T14:30:52.671Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T14:30:52.677Z] warn: [ETL] Failed to load progress for MET: SyntaxError: Unexpected end of JSON input
+[2025-05-12T14:30:52.678Z] info: [ETL] Starting extraction for MET
+[2025-05-12T14:30:58.077Z] info: [MET] Successfully fetched 121702 artwork IDs
+[2025-05-12T14:30:58.077Z] info: [MET] Starting new extraction with 500 artwork IDs
+[2025-05-12T14:30:58.080Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T14:30:58.081Z] info: [ETL] No progress file found for AIC
+[2025-05-12T14:30:58.081Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T18:23:58.758Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T18:23:58.767Z] info: [ETL] Loaded progress for MET. Total IDs: 500, Processed: 0, Failed: 0
+[2025-05-12T18:23:58.768Z] info: [ETL] Starting extraction for MET
+[2025-05-12T18:23:58.768Z] info: [MET] Resuming extraction. Total IDs: 500, Already processed: 0, Failed: 0
+[2025-05-12T18:23:58.769Z] info: [MET] Processing 500 remaining artworks
+[2025-05-12T18:23:58.769Z] info: Processing batch 1/10, size: 50
+[2025-05-12T18:23:59.629Z] warn: [MET] Error fetching artwork 12765: [object Object]
+[2025-05-12T18:24:00.029Z] debug: Batch 1/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:00.843Z] debug: Batch 1/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:01.692Z] debug: Batch 1/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:02.484Z] debug: Batch 1/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:03.301Z] debug: Batch 1/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:03.306Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:03.307Z] info: [MET] Progress: 50/500 (10.00%) processed. Success: 49, Failed: 1
+[2025-05-12T18:24:03.307Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:05.309Z] info: Processing batch 2/10, size: 50
+[2025-05-12T18:24:06.066Z] debug: Batch 2/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:06.783Z] debug: Batch 2/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:07.604Z] debug: Batch 2/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:08.425Z] debug: Batch 2/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:09.240Z] debug: Batch 2/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:09.249Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:09.250Z] info: [MET] Progress: 100/500 (20.00%) processed. Success: 99, Failed: 1
+[2025-05-12T18:24:09.250Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:11.252Z] info: Processing batch 3/10, size: 50
+[2025-05-12T18:24:12.107Z] debug: Batch 3/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:12.925Z] debug: Batch 3/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:13.725Z] debug: Batch 3/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:14.567Z] debug: Batch 3/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:15.387Z] debug: Batch 3/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:15.401Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:15.402Z] info: [MET] Progress: 150/500 (30.00%) processed. Success: 149, Failed: 1
+[2025-05-12T18:24:15.402Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:17.403Z] info: Processing batch 4/10, size: 50
+[2025-05-12T18:24:18.251Z] debug: Batch 4/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:19.070Z] debug: Batch 4/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:19.890Z] debug: Batch 4/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:20.507Z] debug: Batch 4/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:21.323Z] debug: Batch 4/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:21.337Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:21.338Z] info: [MET] Progress: 200/500 (40.00%) processed. Success: 199, Failed: 1
+[2025-05-12T18:24:21.338Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:23.338Z] info: Processing batch 5/10, size: 50
+[2025-05-12T18:24:24.191Z] debug: Batch 5/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:25.009Z] debug: Batch 5/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:25.830Z] debug: Batch 5/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:26.388Z] debug: Batch 5/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:26.909Z] debug: Batch 5/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:26.920Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:26.920Z] info: [MET] Progress: 250/500 (50.00%) processed. Success: 249, Failed: 1
+[2025-05-12T18:24:26.921Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:28.922Z] info: Processing batch 6/10, size: 50
+[2025-05-12T18:24:29.449Z] debug: Batch 6/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:30.023Z] debug: Batch 6/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:30.743Z] debug: Batch 6/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:31.765Z] debug: Batch 6/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:32.586Z] debug: Batch 6/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:32.605Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:32.605Z] info: [MET] Progress: 300/500 (60.00%) processed. Success: 299, Failed: 1
+[2025-05-12T18:24:32.605Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:34.606Z] info: Processing batch 7/10, size: 50
+[2025-05-12T18:24:35.455Z] debug: Batch 7/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:36.283Z] debug: Batch 7/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:37.090Z] debug: Batch 7/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:38.116Z] debug: Batch 7/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:38.935Z] debug: Batch 7/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:38.951Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:38.951Z] info: [MET] Progress: 350/500 (70.00%) processed. Success: 349, Failed: 1
+[2025-05-12T18:24:38.952Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:40.954Z] info: Processing batch 8/10, size: 50
+[2025-05-12T18:24:41.802Z] debug: Batch 8/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:42.419Z] debug: Batch 8/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:43.239Z] debug: Batch 8/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:44.059Z] debug: Batch 8/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:44.891Z] debug: Batch 8/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:44.908Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:44.908Z] info: [MET] Progress: 400/500 (80.00%) processed. Success: 399, Failed: 1
+[2025-05-12T18:24:44.908Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:46.911Z] info: Processing batch 9/10, size: 50
+[2025-05-12T18:24:47.868Z] debug: Batch 9/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:48.779Z] debug: Batch 9/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:49.587Z] debug: Batch 9/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:50.417Z] debug: Batch 9/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:51.224Z] debug: Batch 9/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:51.243Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:51.243Z] info: [MET] Progress: 450/500 (90.00%) processed. Success: 449, Failed: 1
+[2025-05-12T18:24:51.243Z] debug: Waiting 2000ms before next batch
+[2025-05-12T18:24:53.244Z] info: Processing batch 10/10, size: 50
+[2025-05-12T18:24:53.989Z] debug: Batch 10/10: 10/50 (20.0%) items processed
+[2025-05-12T18:24:54.809Z] debug: Batch 10/10: 20/50 (40.0%) items processed
+[2025-05-12T18:24:55.628Z] debug: Batch 10/10: 30/50 (60.0%) items processed
+[2025-05-12T18:24:56.448Z] debug: Batch 10/10: 40/50 (80.0%) items processed
+[2025-05-12T18:24:57.266Z] debug: Batch 10/10: 50/50 (100.0%) items processed
+[2025-05-12T18:24:57.300Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:57.300Z] info: [MET] Progress: 500/500 (100.00%) processed. Success: 499, Failed: 1
+[2025-05-12T18:24:57.319Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/met-progress.json
+[2025-05-12T18:24:57.320Z] info: [MET] Extraction complete. Total: 500, Successful: 499, Failed: 1
+[2025-05-12T18:24:57.320Z] info: [ETL] No progress file found for AIC
+[2025-05-12T18:24:57.320Z] info: [ETL] Starting extraction for AIC
+[2025-05-12T18:30:08.096Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-12T18:30:08.123Z] info: [ETL] Loaded progress for MET. Total IDs: 500, Processed: 500, Failed: 1
+[2025-05-12T18:30:08.123Z] info: [ETL] Starting extraction for MET
+[2025-05-12T18:30:08.124Z] info: [MET] Resuming extraction. Total IDs: 500, Already processed: 500, Failed: 1
+[2025-05-12T18:30:08.124Z] info: [MET] All 500 artworks have been processed already
+[2025-05-12T18:30:08.126Z] info: [ETL] No progress file found for AIC
+[2025-05-12T18:30:08.126Z] info: [ETL] Starting extraction for AIC
+[2025-05-15T13:33:39.127Z] error: [AIC] Error fetching artwork IDs: ids is not defined
+[2025-05-16T15:59:08.033Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63150, Total Pages: 632
+[2025-05-16T15:59:08.649Z] warn: [AIC] Error extracting artwork IDs with on page: 101, with page limit: 100
+[2025-05-16T15:59:10.894Z] warn: [AIC] Error extracting artwork IDs with on page: 102, with page limit: 100
+[2025-05-16T15:59:13.351Z] warn: [AIC] Error extracting artwork IDs with on page: 103, with page limit: 100
+[2025-05-16T15:59:15.808Z] warn: [AIC] Error extracting artwork IDs with on page: 104, with page limit: 100
+[2025-05-16T15:59:18.058Z] warn: [AIC] Error extracting artwork IDs with on page: 105, with page limit: 100
+[2025-05-16T15:59:20.520Z] warn: [AIC] Error extracting artwork IDs with on page: 106, with page limit: 100
+[2025-05-16T15:59:22.873Z] warn: [AIC] Error extracting artwork IDs with on page: 107, with page limit: 100
+[2025-05-16T15:59:25.234Z] warn: [AIC] Error extracting artwork IDs with on page: 108, with page limit: 100
+[2025-05-16T15:59:27.480Z] warn: [AIC] Error extracting artwork IDs with on page: 109, with page limit: 100
+[2025-05-16T15:59:29.766Z] warn: [AIC] Error extracting artwork IDs with on page: 110, with page limit: 100
+[2025-05-16T15:59:32.073Z] warn: [AIC] Error extracting artwork IDs with on page: 111, with page limit: 100
+[2025-05-16T15:59:34.445Z] warn: [AIC] Error extracting artwork IDs with on page: 112, with page limit: 100
+[2025-05-16T15:59:36.799Z] warn: [AIC] Error extracting artwork IDs with on page: 113, with page limit: 100
+[2025-05-16T15:59:39.155Z] warn: [AIC] Error extracting artwork IDs with on page: 114, with page limit: 100
+[2025-05-16T15:59:41.613Z] warn: [AIC] Error extracting artwork IDs with on page: 115, with page limit: 100
+[2025-05-16T15:59:43.864Z] warn: [AIC] Error extracting artwork IDs with on page: 116, with page limit: 100
+[2025-05-16T15:59:46.116Z] warn: [AIC] Error extracting artwork IDs with on page: 117, with page limit: 100
+[2025-05-16T15:59:48.675Z] warn: [AIC] Error extracting artwork IDs with on page: 118, with page limit: 100
+[2025-05-16T15:59:50.967Z] warn: [AIC] Error extracting artwork IDs with on page: 119, with page limit: 100
+[2025-05-16T15:59:53.491Z] warn: [AIC] Error extracting artwork IDs with on page: 120, with page limit: 100
+[2025-05-16T15:59:55.746Z] warn: [AIC] Error extracting artwork IDs with on page: 121, with page limit: 100
+[2025-05-16T15:59:57.997Z] warn: [AIC] Error extracting artwork IDs with on page: 122, with page limit: 100
+[2025-05-16T16:00:00.455Z] warn: [AIC] Error extracting artwork IDs with on page: 123, with page limit: 100
+[2025-05-16T16:00:02.707Z] warn: [AIC] Error extracting artwork IDs with on page: 124, with page limit: 100
+[2025-05-16T16:00:04.961Z] warn: [AIC] Error extracting artwork IDs with on page: 125, with page limit: 100
+[2025-05-16T16:00:07.417Z] warn: [AIC] Error extracting artwork IDs with on page: 126, with page limit: 100
+[2025-05-16T16:47:12.579Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63150, Total Pages: 632
+[2025-05-16T16:49:46.925Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63150, Total Pages: 632
+[2025-05-16T16:49:51.411Z] warn: [AIC] Error extracting artwork IDs with on page: 112813859, with page limit: 100
+[2025-05-16T16:49:53.419Z] info: [AIC] Successfully fetched 112813858 artwork IDs
+[2025-05-16T16:52:33.954Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63150, Total Pages: 632
+[2025-05-16T16:52:37.806Z] warn: [AIC] Error extracting artwork IDs on page: 112813859
+[2025-05-16T16:52:39.809Z] info: [AIC] Successfully fetched 112813858 artwork IDs
+[2025-05-16T16:57:20.127Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63150, Total Pages: 632
+[2025-05-16T16:57:32.873Z] warn: [AIC] Error extracting artwork IDs on page: 4
+[2025-05-16T16:57:39.885Z] warn: [AIC] Error extracting artwork IDs on page: 5
+[2025-05-16T16:58:01.069Z] warn: [AIC] Error extracting artwork IDs on page: 11
+[2025-05-16T16:58:03.321Z] warn: [AIC] Error extracting artwork IDs on page: 12
+[2025-05-16T16:58:05.740Z] warn: [AIC] Error extracting artwork IDs on page: 13
+[2025-05-16T16:58:08.033Z] warn: [AIC] Error extracting artwork IDs on page: 14
+[2025-05-16T16:58:10.305Z] warn: [AIC] Error extracting artwork IDs on page: 15
+[2025-05-16T16:58:12.560Z] warn: [AIC] Error extracting artwork IDs on page: 16
+[2025-05-16T16:58:14.996Z] warn: [AIC] Error extracting artwork IDs on page: 17
+[2025-05-16T16:58:17.247Z] warn: [AIC] Error extracting artwork IDs on page: 18
+[2025-05-16T16:58:19.704Z] warn: [AIC] Error extracting artwork IDs on page: 19
+[2025-05-16T16:58:21.859Z] warn: [AIC] Error extracting artwork IDs on page: 20
+[2025-05-17T14:59:50.531Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63145, Total Pages: 632
+[2025-05-17T14:59:53.333Z] info: [AIC] Successfully fetched 3 artwork IDs
+[2025-05-18T16:43:21.533Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63145, Total Pages: 1263
+[2025-05-18T16:43:29.665Z] info: [AIC] Successfully fetched 120 artwork IDs
+[2025-05-18T17:10:14.785Z] info: [ETL] Starting ETL process with options: {"sources":["MET","AIC"],"resume":true,"batchSize":50,"concurrency":5,"delayBetweenBatches":2000,"maxItems":500}
+[2025-05-18T17:10:14.824Z] info: [ETL] Loaded progress for MET. Total IDs: 500, Processed: 500, Failed: 1
+[2025-05-18T17:10:14.824Z] info: [ETL] Starting extraction for MET
+[2025-05-18T17:10:14.825Z] info: [MET] Resuming extraction. Total IDs: 500, Already processed: 500, Failed: 1
+[2025-05-18T17:10:14.826Z] info: [MET] All 500 artworks have been processed already
+[2025-05-18T17:10:14.827Z] info: [ETL] No progress file found for AIC
+[2025-05-18T17:10:14.828Z] info: [ETL] Starting extraction for AIC
+[2025-05-18T17:10:15.934Z] info: [AIC] Starting extraction of paginated artwork IDs: Total: 63145, Total Pages: 1263
+[2025-05-18T17:10:41.882Z] info: [AIC] Successfully fetched 500 artwork IDs
+[2025-05-18T17:10:41.883Z] info: [AIC] Starting new extraction with 500 artwork IDs
+[2025-05-18T17:10:41.885Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:10:41.886Z] info: [AIC] Processing 500 remaining artworks
+[2025-05-18T17:10:41.886Z] info: Processing batch 1/10, size: 50
+[2025-05-18T17:10:43.157Z] debug: Batch 1/10: 10/50 (20.0%) items processed
+[2025-05-18T17:10:44.235Z] debug: Batch 1/10: 20/50 (40.0%) items processed
+[2025-05-18T17:10:45.203Z] debug: Batch 1/10: 30/50 (60.0%) items processed
+[2025-05-18T17:10:46.025Z] debug: Batch 1/10: 40/50 (80.0%) items processed
+[2025-05-18T17:10:47.054Z] debug: Batch 1/10: 50/50 (100.0%) items processed
+[2025-05-18T17:10:47.090Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:10:47.091Z] info: [AIC] Progress: 50/500 (10.00%) processed. Success: 50, Failed: 0
+[2025-05-18T17:10:47.091Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:10:49.094Z] info: Processing batch 2/10, size: 50
+[2025-05-18T17:10:50.324Z] debug: Batch 2/10: 10/50 (20.0%) items processed
+[2025-05-18T17:10:51.144Z] debug: Batch 2/10: 20/50 (40.0%) items processed
+[2025-05-18T17:10:52.168Z] debug: Batch 2/10: 30/50 (60.0%) items processed
+[2025-05-18T17:10:53.191Z] debug: Batch 2/10: 40/50 (80.0%) items processed
+[2025-05-18T17:10:54.011Z] debug: Batch 2/10: 50/50 (100.0%) items processed
+[2025-05-18T17:10:54.065Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:10:54.065Z] info: [AIC] Progress: 100/500 (20.00%) processed. Success: 100, Failed: 0
+[2025-05-18T17:10:54.066Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:10:56.066Z] info: Processing batch 3/10, size: 50
+[2025-05-18T17:10:57.082Z] debug: Batch 3/10: 10/50 (20.0%) items processed
+[2025-05-18T17:10:58.108Z] debug: Batch 3/10: 20/50 (40.0%) items processed
+[2025-05-18T17:10:58.929Z] debug: Batch 3/10: 30/50 (60.0%) items processed
+[2025-05-18T17:10:59.748Z] debug: Batch 3/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:00.773Z] debug: Batch 3/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:00.834Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:00.835Z] info: [AIC] Progress: 150/500 (30.00%) processed. Success: 150, Failed: 0
+[2025-05-18T17:11:00.835Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:02.836Z] info: Processing batch 4/10, size: 50
+[2025-05-18T17:11:03.842Z] debug: Batch 4/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:04.865Z] debug: Batch 4/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:05.692Z] debug: Batch 4/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:06.507Z] debug: Batch 4/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:07.736Z] debug: Batch 4/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:07.835Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:07.835Z] info: [AIC] Progress: 200/500 (40.00%) processed. Success: 200, Failed: 0
+[2025-05-18T17:11:07.835Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:09.835Z] info: Processing batch 5/10, size: 50
+[2025-05-18T17:11:10.807Z] debug: Batch 5/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:11.830Z] debug: Batch 5/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:12.647Z] debug: Batch 5/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:13.472Z] debug: Batch 5/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:14.699Z] debug: Batch 5/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:14.757Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:14.757Z] info: [AIC] Progress: 250/500 (50.00%) processed. Success: 250, Failed: 0
+[2025-05-18T17:11:14.758Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:16.760Z] info: Processing batch 6/10, size: 50
+[2025-05-18T17:11:17.768Z] debug: Batch 6/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:18.794Z] debug: Batch 6/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:19.611Z] debug: Batch 6/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:20.434Z] debug: Batch 6/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:21.274Z] debug: Batch 6/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:21.381Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:21.381Z] info: [AIC] Progress: 300/500 (60.00%) processed. Success: 300, Failed: 0
+[2025-05-18T17:11:21.382Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:23.383Z] info: Processing batch 7/10, size: 50
+[2025-05-18T17:11:24.323Z] debug: Batch 7/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:25.142Z] debug: Batch 7/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:26.003Z] debug: Batch 7/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:26.984Z] debug: Batch 7/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:28.008Z] debug: Batch 7/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:28.131Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:28.131Z] info: [AIC] Progress: 350/500 (70.00%) processed. Success: 350, Failed: 0
+[2025-05-18T17:11:28.131Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:30.134Z] info: Processing batch 8/10, size: 50
+[2025-05-18T17:11:31.080Z] debug: Batch 8/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:31.926Z] debug: Batch 8/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:32.720Z] debug: Batch 8/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:33.743Z] debug: Batch 8/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:34.563Z] debug: Batch 8/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:34.669Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:34.670Z] info: [AIC] Progress: 400/500 (80.00%) processed. Success: 400, Failed: 0
+[2025-05-18T17:11:34.670Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:36.672Z] info: Processing batch 9/10, size: 50
+[2025-05-18T17:11:37.441Z] debug: Batch 9/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:38.452Z] debug: Batch 9/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:39.273Z] debug: Batch 9/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:40.297Z] debug: Batch 9/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:41.207Z] debug: Batch 9/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:41.303Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:41.304Z] info: [AIC] Progress: 450/500 (90.00%) processed. Success: 450, Failed: 0
+[2025-05-18T17:11:41.304Z] debug: Waiting 2000ms before next batch
+[2025-05-18T17:11:43.306Z] info: Processing batch 10/10, size: 50
+[2025-05-18T17:11:44.392Z] debug: Batch 10/10: 10/50 (20.0%) items processed
+[2025-05-18T17:11:45.419Z] debug: Batch 10/10: 20/50 (40.0%) items processed
+[2025-05-18T17:11:46.239Z] debug: Batch 10/10: 30/50 (60.0%) items processed
+[2025-05-18T17:11:47.222Z] debug: Batch 10/10: 40/50 (80.0%) items processed
+[2025-05-18T17:11:48.081Z] debug: Batch 10/10: 50/50 (100.0%) items processed
+[2025-05-18T17:11:48.188Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:48.189Z] info: [AIC] Progress: 500/500 (100.00%) processed. Success: 500, Failed: 0
+[2025-05-18T17:11:48.305Z] debug: [ETL] Progress saved to /home/ollie/coding/projects/pontus-be/etl/progress/aic-progress.json
+[2025-05-18T17:11:48.306Z] info: [AIC] Extraction complete. Total: 500, Successful: 500, Failed: 0

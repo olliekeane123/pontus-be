@@ -1,7 +1,14 @@
 import { RunETLConfig } from "../../types/etl/etl"
 
 export const getETLConfig = (): RunETLConfig => {
-    const config: RunETLConfig = { sources: ["MET", "AIC"], resume: true }
+    const config: RunETLConfig = {
+        sources: ["MET", "AIC"],
+        resume: true,
+        batchSize: 0,
+        concurrency: 0,
+        delayBetweenBatches: 0,
+        maxItems: undefined,
+    }
 
     const env = process.env.NODE_ENV || "development"
 
@@ -11,11 +18,13 @@ export const getETLConfig = (): RunETLConfig => {
         config.delayBetweenBatches = 100
         config.maxItems = 30
     } else if (env === "development") {
-        ;(config.batchSize = 50), (config.concurrency = 5)
+        config.batchSize = 50
+        config.concurrency = 5
         config.delayBetweenBatches = 2000
         config.maxItems = 500
     } else if (env === "production") {
-        ;(config.batchSize = 50), (config.concurrency = 5)
+        config.batchSize = 50
+        config.concurrency = 5
         config.delayBetweenBatches = 2000
     } else {
         throw new Error(
@@ -25,3 +34,8 @@ export const getETLConfig = (): RunETLConfig => {
 
     return config
 }
+
+/* 
+export const validateETLConfig = (): RunETLConfig => {
+
+} */
