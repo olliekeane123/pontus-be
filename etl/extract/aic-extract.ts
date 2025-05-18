@@ -165,8 +165,6 @@ export const fetchArtworkIds = async (maxItems?: number): Promise<number[]> => {
                 break
             }
 
-            console.log(i)
-
             try {
                 const response: AicGetArtworksResponse = await apiClient.get(
                     AIC_BASE_URL +
