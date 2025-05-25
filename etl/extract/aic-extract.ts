@@ -1,8 +1,11 @@
+import path from "path"
 import getErrorMessage from "../../lib/getErrorMessage"
 import logger from "../../lib/logger"
 import {
+    AicArtist,
     AicArtwork,
     AicGetArtworksResponse,
+    AicImageUrls,
     ETLProgress,
 } from "../../types/etl/etl"
 import apiClient from "../lib/apiClient"
@@ -22,7 +25,9 @@ export const extractAicArtworks = async (options: {
     concurrency: number
     delayBetweenBatches: number
     maxItems?: number
-}): Promise<(AicArtwork | null)[]> => {
+}): Promise<
+    ((AicArtwork & { artists: AicArtist[]; imageUrls: AicImageUrls }) | null)[]
+> => {
     const { progress, batchSize, concurrency, delayBetweenBatches, maxItems } =
         options
     try {
@@ -68,15 +73,26 @@ export const extractAicArtworks = async (options: {
         await processInBatches({
             items: idsToProcess,
             processFn: async (id) => {
-                const artwork = await fetchArtworkById(id)
+                const artwork: AicArtwork | null = await fetchArtworkById(id)
 
-                // Update progress
                 const index = currentProgress.allIds.indexOf(id)
                 if (index >= 0) {
-                    currentProgress.results[index] = artwork
                     currentProgress.processedIds.push(id)
                     if (artwork === null) {
                         currentProgress.failedIds.push(id)
+                        currentProgress.results[index] = artwork
+                    } else {
+                       
+                        const artists = await fetchArtistsByArtwork(artwork)
+                        const imageUrls = await fetchImagesByArtwork(artwork)
+
+                        const enrichedArtwork = {
+                            ...artwork,
+                            artists,
+                            imageUrls,
+                        }
+
+                        currentProgress.results[index] = enrichedArtwork
                     }
                 }
 
@@ -88,7 +104,6 @@ export const extractAicArtworks = async (options: {
             onBatchComplete: async (batch, results) => {
                 await saveProgress("AIC", currentProgress)
 
-                // Log progress
                 const processedCount = currentProgress.processedIds.length
                 const successCount = currentProgress.results.filter(
                     (result) => result !== null
@@ -197,6 +212,7 @@ export const fetchArtworkIds = async (maxItems?: number): Promise<number[]> => {
                         i + 1
                     }: ${getErrorMessage(error)}`
                 )
+                totalNumFailed++
             }
 
             await sleep(2000)
@@ -215,7 +231,6 @@ export const fetchArtworkIds = async (maxItems?: number): Promise<number[]> => {
     }
 }
 
-
 export const fetchArtworkById = async (
     id: number,
     retries = 0
@@ -225,7 +240,7 @@ export const fetchArtworkById = async (
 
     try {
         const response = await apiClient.get(AIC_BASE_URL + `${id}`)
-        return response.data
+        return response.data.data
     } catch (error: unknown) {
         const errorMessage = getErrorMessage(error)
 
@@ -242,5 +257,122 @@ export const fetchArtworkById = async (
 
         logger.warn(`[AIC] Error fetching artwork ${id}: ${errorMessage}`)
         return null
+    }
+}
+
+const fetchArtistsByArtwork = async ({
+    artist_id,
+    artist_ids,
+}: AicArtwork): Promise<AicArtist[]> => {
+    const artists: AicArtist[] = []
+
+    if (artist_id) {
+        const artist: AicArtist | null = await fetchArtistById(artist_id)
+        if (artist) {
+            artists.push(artist)
+        }
+    }
+
+    if (artist_ids && artist_ids.length > 0) {
+        for (const artistId of artist_ids) {
+            if (artistId === artist_id) {
+                continue
+            }
+
+            const artist = await fetchArtistById(artistId)
+            if (artist) {
+                artists.push(artist)
+            }
+        }
+    }
+
+    return artists
+}
+
+const fetchArtistById = async (
+    id: number,
+    retries = 0
+): Promise<AicArtist | null> => {
+    const MAX_RETRIES = 3
+    const RETRY_DELAY = 1000
+
+    try {
+        const response = await apiClient.get(
+            `https://api.artic.edu/api/v1/agents/${id}`
+        )
+        return response.data.data
+    } catch (error: unknown) {
+        const errorMessage = getErrorMessage(error)
+
+        if (isRetryable(errorMessage) && retries < MAX_RETRIES) {
+            const delayTime = RETRY_DELAY * Math.pow(2, retries)
+            logger.info(
+                `[AIC] Retrying fetch artist ${id} after ${delayTime}ms (attempt ${
+                    retries + 1
+                }/${MAX_RETRIES})`
+            )
+            await sleep(delayTime)
+            return fetchArtistById(id, retries + 1)
+        }
+
+        logger.warn(`[AIC] Error fetching artist ${id}: ${errorMessage}`)
+        return null
+    }
+}
+
+const fetchImagesByArtwork = async (
+    artwork: AicArtwork
+): Promise<AicImageUrls> => {
+    const imageBaseUrl =
+        artwork.config?.iiif_url || "https://www.artic.edu/iiif/2"
+    const imageId = artwork.image_id
+    const altImageIds = artwork.alt_image_ids
+    const IMG_URL_SUFFIX = "/full/843,/0/default.jpg"
+
+    const imageUrls: AicImageUrls = {
+        primaryImage: null,
+        altImages: [],
+    }
+
+    console.log(imageBaseUrl, imageId, altImageIds)
+
+    if (imageId) {
+        const imgUrl = `${imageBaseUrl.replace(
+            /\/$/,
+            ""
+        )}/${imageId}${IMG_URL_SUFFIX}`
+        imageUrls.primaryImage = (await isImageUrlValid(imgUrl)) ? imgUrl : null
+    }
+
+    if (altImageIds && altImageIds.length > 0) {
+        for (const altImageId of altImageIds) {
+            const imgUrl = `${imageBaseUrl.replace(
+                /\/$/,
+                ""
+            )}/${altImageId}${IMG_URL_SUFFIX}`
+            const isValid = await isImageUrlValid(imgUrl)
+            if (isValid) {
+                imageUrls.altImages.push(imgUrl)
+            }
+        }
+    }
+
+    return imageUrls
+}
+
+const isImageUrlValid = async (url: string): Promise<boolean> => {
+    try {
+        const response = await apiClient.head(url)
+        return (
+            response.status === 200 &&
+            response.headers["content-type"]?.startsWith("image/")
+        )
+    } catch (error) {
+        logger.debug(
+            `[AIC] Image URL validation failed for ${url}: ${getErrorMessage(
+                error
+            )}`
+        )
+        return false
     }
 }

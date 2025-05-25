@@ -4,6 +4,8 @@ import { getETLConfig } from "./config/getETLConfig"
 import { extractData } from "./extract"
 import { importProgressFromFile } from "./lib/progress"
 import sleep from "./lib/sleep"
+import { loadArtworks } from "./load/loadArtworks"
+import { transformData } from "./transform"
 
 export const runETL = async (
     options: RunETLConfig = getETLConfig()
@@ -44,12 +46,23 @@ export const runETL = async (
                 delayBetweenBatches,
                 maxItems,
             })
+
+            logger.info(`[ETL] Starting transformation for ${source}`)
+            const transformedData = await transformData(source, rawData)
+
+            logger.info(`[ETL] Starting data load for ${source}`)
+            await loadArtworks(source, transformedData)
+
+            logger.info(
+                `[ETL] Successfully completed ETL process for ${source}`
+            )
         }
+
+        logger.info(`[ETL] Successfully completed full ETL process`)
     } catch (error) {
         logger.error(`[ETL] Error in ETL process: ${error}`)
         throw error
     }
 }
-
 
 runETL()

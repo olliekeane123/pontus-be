@@ -3,7 +3,7 @@ import { RunETLConfig } from "../../types/etl/etl"
 export const getETLConfig = (): RunETLConfig => {
     const config: RunETLConfig = {
         sources: ["MET", "AIC"],
-        resume: true,
+        resume: false,
         batchSize: 0,
         concurrency: 0,
         delayBetweenBatches: 0,
@@ -34,8 +34,3 @@ export const getETLConfig = (): RunETLConfig => {
 
     return config
 }
-
-/* 
-export const validateETLConfig = (): RunETLConfig => {
-
-} */
